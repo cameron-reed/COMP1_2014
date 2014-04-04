@@ -183,6 +183,7 @@ def DisplayRecentScores(RecentScores):
   print()
 
 def UpdateRecentScores(RecentScores, Score):
+  HighScore = input("Do you want to add your score to the high score table? (y or n): ")
   PlayerName = GetPlayerName()
   FoundSpace = False
   Count = 1
