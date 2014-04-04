@@ -26,3 +26,5 @@
 			
 			
 ##Task 3b Answer
+
+1. The function responsible for adding scores to the table is "UpdateRecentScores".
