@@ -4,7 +4,7 @@
 
 1. You make it a constant variable
 2. The DisplayMenu() function
-3. 
+3. The GetRank(RankNo) function
 
 ##Pseudocode for functions
 1. DisplayOptions() function

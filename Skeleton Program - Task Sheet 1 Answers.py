@@ -243,17 +243,22 @@ def DisplayOptions():
   print()
   print("1. Set Ace to be HIGH or LOW")
   print()
-  print('Select an option from the menu (or enter q to quit): ', end='')
 
 def GetOptionChoice():
+  OptionChoice = input('Select an option from the menu (or enter q to quit): ')
   print()
-  HighOrLow = input("Do you want the Ace to be (h)igh or (l)ow: ")
+  return OptionChoice
   
-def SetOptions():
-  print()
+def SetOptions(OptionChoice):
+  if OptionChoice == '1':
+    SetAceHighOrLow()
   
 def SetAceHighOrLow():
-  print()
+  Ace = input("Do you want the Ace to be (h)igh or (l)ow: ")
+  if Ace == 'h':
+    Ace = 'h'
+  elif Ace == 'l':
+    Ace = 'l'
 
 if __name__ == '__main__':
   for Count in range(1, 53):
@@ -273,7 +278,9 @@ if __name__ == '__main__':
       PlayGame(Deck, RecentScores)
     elif Choice == '3':
       DisplayRecentScores(RecentScores)
+    elif Choice == '4':
+      ResetRecentScores(RecentScores)
     elif Choice == '5':
       DisplayOptions()
-    else:
-      ResetRecentScores(RecentScores)
+      OptionChoice = GetOptionChoice()
+      SetOptions(OptionChoice)
