@@ -22,7 +22,7 @@
 		END WHILE
 		OUTPUT ""
 		RETURN PlayerName
-	END FUNCTION
+	END FUNCTION                                                                                  
 			
 			
 ##Task 3b Answer
@@ -36,16 +36,23 @@ Fixed Value - a variable initialised without any calculation and not changed the
 Stepper - a variable stepping through a systematic, predictable succession of values.
 Most recent holder - a variable holding the latest value encountered when processing a succession of unpredictable values or simply the latest value obtained as input
 Most wanted holder - a variable holding the most appropriate value encountered so far
-Gatherer - a variable accumulating the effect of individual values
+Gatherer - a variable gathering the total of the values so far
 Transformation - a variable that always gets its new value from a fixed calculation of values of other variables
 Follower - a variable that gets its new value from the old value of some other data item
 Temporary - a variable holding some value for a short time only
 
-Fixed Value example - NO_OF_RECENT_SCORES
-Stepper example - Count
-Most recent holder example - RecentScores
-Most wanted holder example - 
-Gatherer example - Choice
-Transformation example - Deck
-Follower example - Name
-Temporary example - Ace
+Fixed Value example - NoOfSwaps - line 98 - never changes
+Stepper example - Count - line 85 - always increments by 1 each time
+Most recent holder example - Choice - line 197 - holds the most recent value
+Most wanted holder example - NextCard - line 188 - the value that the program or user wants most
+Gatherer example - no examples
+Transformation example - FoundSpace - line 171 
+Follower example - LastCard - line 187
+Temporary example - SwapSpace - line 102
+
+##Additional Task - Functions and parameters
+
+1. Pass by value makes a copy of the original whereas pass by reference changes the actual value
+Score - line 139 - passed by value
+Deck - line 83 - passed by reference (list always passed by reference)
+ThisCard - line 109 - passed by reference (record always passed by reference) 
