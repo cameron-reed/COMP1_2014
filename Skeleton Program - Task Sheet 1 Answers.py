@@ -164,19 +164,16 @@ def DisplayCorrectGuessMessage(Score):
   print()
 
 def BubbleSortScores(RecentScores):
-  Count = 1
-  RecentScores = []
-  ListLength = len(RecentScores)
-  swap_made = True
-  while swap_made:
-    swap_made = False
-    ListLength = ListLength - 1
-    for Count in range (len(RecentScores)-1):
-      if RecentScores[Count]<RecentScores[Count+1]:
-        temp = RecentScores[Count+1]
-        RecentScores[Count+1] = RecentScores[Count]
-        RecentScores[Count] = temp
-        swap_made = True
+  Swap_Made = True
+  while Swap_Made:
+    Swap_Made = False
+    for Count in range (1,len(RecentScores)-1):
+      if RecentScores[Count].Score < RecentScores[Count+1].Score:
+        Temp = RecentScores[Count]
+        RecentScores[Count] = RecentScores[Count+1]
+        RecentScores[Count+1] = Temp
+        Swap_Made = True
+  return RecentScores
 
 def ResetRecentScores(RecentScores):
   for Count in range(1, NO_OF_RECENT_SCORES + 1):
@@ -298,6 +295,7 @@ if __name__ == '__main__':
       LoadDeck(Deck)
       PlayGame(Deck, RecentScores)
     elif Choice == '3':
+      BubbleSortScores(RecentScores)
       DisplayRecentScores(RecentScores)
     elif Choice == '4':
       ResetRecentScores(RecentScores)
