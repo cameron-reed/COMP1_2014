@@ -182,7 +182,13 @@ def SaveScores(RecentScores):
       my_file.write(str(RecentScores[Count].Date)+"\n")
       my_file.write((RecentScores[Count].Name)+"\n")
       my_file.write(str(RecentScores[Count].Score)+"\n")
+    print("Your most recent scores have been saved.")
+    
 
+def LoadScores():
+  with open("save_scores.txt", mode = "r", encoding = "utf-8")as my_file:
+    for line in my_file:
+      print(line, end="")
 
 def ResetRecentScores(RecentScores):
   for Count in range(1, NO_OF_RECENT_SCORES + 1):
