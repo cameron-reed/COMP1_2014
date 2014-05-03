@@ -76,6 +76,7 @@ def DisplayMenu():
   print('4. Reset recent scores')
   print('5. Options')
   print('6. Save high scores')
+  print('7. Load recent scores')
   print()
   print('Select an option from the menu (or enter q to quit): ', end='')
 
@@ -186,9 +187,16 @@ def SaveScores(RecentScores):
     
 
 def LoadScores():
+  RecentScores = [""]
   with open("save_scores.txt", mode = "r", encoding = "utf-8")as my_file:
-    for line in my_file:
-      print(line, end="")
+    for count in range(1,NO_OF_RECENT_SCORES + 1):
+      RecordScore = TRecentScore()
+      RecordScore.Name = my_file.readline().rstrip("\n")
+      RecordScore.Date = my_file.readline().rstrip("\n")
+      RecordScore.Score = my_file.readline().rstrip("\n")
+      RecentScores.append(RecordScore)
+    print("Your most recent scores have been loaded!")
+  return RecentScores
 
 def ResetRecentScores(RecentScores):
   for Count in range(1, NO_OF_RECENT_SCORES + 1):
@@ -320,3 +328,5 @@ if __name__ == '__main__':
       SetOptions(OptionChoice)
     elif Choice == '6':
       SaveScores(RecentScores)
+    elif Choice == '7':
+      RecentScores = LoadScores()
